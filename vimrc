@@ -21,6 +21,7 @@ set splitright
 colo ron
 syntax on
 
+filetype on
 
 " kangh's key map
 "let mapleader=' '
@@ -192,9 +193,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Taglist
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
+Plug 'vim-scripts/taglist.vim'
 
 " Error checking
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 
 " Auto Complete
 "Plug 'Valloric/YouCompleteMe'
@@ -203,8 +205,8 @@ Plug 'w0rp/ale'
 Plug 'mbbill/undotree/'
 
 " Other visual enhancement
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'itchyny/vim-cursorword'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'itchyny/vim-cursorword'
 
 " Git
 Plug 'rhysd/conflict-marker.vim'
@@ -221,28 +223,28 @@ Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 "Plug 'mattn/emmet-vim'
 
 " Python
-Plug 'vim-scripts/indentpython.vim'
+"Plug 'vim-scripts/indentpython.vim'
 
 " Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
-Plug 'vimwiki/vimwiki'
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['markdown', 'vim-plug'] }
+"Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
+"Plug 'vimwiki/vimwiki'
 
 " Bookmarks
-Plug 'kshenoy/vim-signature'
+"Plug 'kshenoy/vim-signature'
 
 " Other useful utilities
-Plug 'terryma/vim-multiple-cursors'
-Plug 'junegunn/goyo.vim' " distraction free writing mode
-Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to change 'word' to `word`
-Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
-Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
-Plug 'scrooloose/nerdcommenter' " in <space>cc to comment a line
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'junegunn/goyo.vim' " distraction free writing mode
+"Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to change 'word' to `word`
+"Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
+"Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
+"Plug 'scrooloose/nerdcommenter' " in <space>cc to comment a line
 
 " Dependencies
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'kana/vim-textobj-user'
-Plug 'fadein/vim-FIGlet'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'kana/vim-textobj-user'
+"Plug 'fadein/vim-FIGlet'
 
 " Initialize plugin system
 call plug#end()
@@ -268,3 +270,10 @@ let NERDTreeMapOpenInTab = "o"
 let NERDTreeMapPreview = ""
 let NERDTreeMapCloseDir = "n"
 let NERDTreeMapChangeRoot = "y"
+
+
+" ===
+" === Taglist
+" ===
+nnoremap <silent> <F8> :TlistToggle<CR>
+let Tlist_Show_One_File = 1
