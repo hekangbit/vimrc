@@ -32,6 +32,7 @@ inoremap <C-u>  <Esc>viwgUea
 nnoremap <leader>ev :vs $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>q :q<cr>
 
 "Stay line of last VIM operating
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -187,12 +188,31 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'connorholyday/vim-snazzy'
 
+Plug 'w0ng/vim-hybrid'
+
+" Indentline
+Plug 'Yggdroot/indentLine'
+
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Taglist
+" Easymotion
+Plug 'easymotion/vim-easymotion'
+
+" Fuzzy finder
+Plug 'kien/ctrlp.vim'
+
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+Plug 'brooth/far.vim'
+
+
+" Tagbar
 Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
+
+" Taglist
 Plug 'vim-scripts/taglist.vim'
 
 " Error checking
@@ -234,9 +254,9 @@ Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 "Plug 'kshenoy/vim-signature'
 
 " Other useful utilities
+Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to change 'word' to `word`
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'junegunn/goyo.vim' " distraction free writing mode
-"Plug 'tpope/vim-surround' " type ysks' to wrap the word with '' or type cs'` to change 'word' to `word`
 "Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
 "Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
 "Plug 'scrooloose/nerdcommenter' " in <space>cc to comment a line
@@ -250,7 +270,11 @@ Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
 call plug#end()
 
 
+" ===
+" === colorschem select
+" ===
 colorscheme snazzy
+"colorscheme hybrid
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
@@ -259,7 +283,8 @@ cnoremap w!! w !sudo tee % >/dev/null
 " ===
 " === NERDTree
 " ===
-map tt :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>v :NERDTreeFind<CR>
 let NERDTreeMapOpenExpl = ""
 let NERDTreeMapUpdir = ""
 let NERDTreeMapUpdirKeepOpen = "l"
@@ -273,7 +298,30 @@ let NERDTreeMapChangeRoot = "y"
 
 
 " ===
+" === CtrlP
+" ===
+let g:ctrlp_map = '<C-p>'
+
+
+" ===
 " === Taglist
 " ===
 nnoremap <silent> <F8> :TlistToggle<CR>
 let Tlist_Show_One_File = 1
+
+
+" ===
+" === Indentline
+" ===
+let g:indentLine_color_term = 239
+
+
+" ===
+" === Easymotion
+" ===
+nmap ss <Plug>(easymotion-s2)
+
+
+" ===
+" === Far
+" ===
