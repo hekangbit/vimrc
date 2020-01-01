@@ -17,6 +17,7 @@ set cino=:0
 set cindent
 
 set splitright
+set scrolloff=5
 
 colo ron
 syntax on
