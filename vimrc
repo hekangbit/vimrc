@@ -10,7 +10,8 @@ set ai
 set showmatch
 set showmode
 set hlsearch
-set mouse=a
+set mouse=
+set cursorline
 
 set t_Co=8
 set cino=:0
