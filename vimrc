@@ -11,7 +11,7 @@ set showmatch
 set showmode
 set hlsearch
 set mouse=
-set cursorline
+"set cursorline
 
 set t_Co=8
 set cino=:0
@@ -24,6 +24,13 @@ colo ron
 syntax on
 
 filetype on
+
+
+" kang's code format
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " kangh's key map
 "let mapleader=' '
@@ -275,7 +282,7 @@ call plug#end()
 " ===
 " === colorschem select
 " ===
-colorscheme snazzy
+"colorscheme snazzy
 "colorscheme hybrid
 
 " Sudo to write
